@@ -14,6 +14,7 @@ const Movies = () => {
   const [searchParam, setSearchParam] = useSearchParams();
   const isFirstRender = useFirstMountState();
   const query = searchParam.get('query') ?? '';
+  console.log(query);
 
   const updQuery = q => {
     if (q.trim() === '') {
@@ -24,8 +25,8 @@ const Movies = () => {
     setQ(q);
   };
 
-  const updQueryString = q => {
-    const nextParam = q !== '' ? { q } : {};
+  const updQueryString = query => {
+    const nextParam = query !== '' ? { query } : {};
     setSearchParam(nextParam);
   };
 
@@ -38,6 +39,7 @@ const Movies = () => {
   if (!films) {
     return;
   }
+  console.log(films);
   return (
     <div>
       <SearchBar onSubmit={updQuery} onChange={updQueryString} />

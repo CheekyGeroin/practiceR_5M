@@ -19,18 +19,18 @@ export const fetchFilmDetails = async id => {
   const res = await axios.get(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
   );
-  return res;
+  return res.data;
 };
 
 export const fetchFilmCredits = async id => {
   const res = await axios.get(`
 https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`);
-  return res;
+  return res.data.cast;
 };
 
 export const fetchFilmReviews = async id => {
   const res = await axios.get(
     `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}`
   );
-  return res;
+  return res.data.results;
 };

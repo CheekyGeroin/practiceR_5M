@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import FilmsListItem from './FilmsListItem/FilmsListItem';
 
 const FilmsList = ({ films }) => {
+  console.log(films);
   return (
     <List>
       {films.length > 0 &&
